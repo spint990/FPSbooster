@@ -25,32 +25,32 @@ if not _G.Settings then
         Meshes = {
             NoMesh = false,
             NoTexture = false,
-            Destroy = false
+            Destroy = true
         },
         Images = {
             Invisible = true,
-            Destroy = false
+            Destroy = true
         },
         Explosions = {
             Smaller = true,
             Invisible = false, -- Not recommended for PVP games
-            Destroy = false -- Not recommended for PVP games
+            Destroy = true -- Not recommended for PVP games
         },
         Particles = {
             Invisible = true,
-            Destroy = false
+            Destroy = true
         },
         TextLabels = {
             LowerQuality = false,
             Invisible = false,
-            Destroy = false
+            Destroy = true
         },
         MeshParts = {
             LowerQuality = true,
             Invisible = false,
             NoTexture = false,
             NoMesh = false,
-            Destroy = false
+            Destroy = true
         },
         Other = {
             ["FPS Cap"] = 10, -- Limit FPS to 10 for optimization
@@ -63,7 +63,7 @@ if not _G.Settings then
             ["Low Quality Models"] = true,
             ["Reset Materials"] = true,
             ["Lower Quality MeshParts"] = true,
-            ClearNilInstances = false
+            ClearNilInstances = true
         }
     }
 end
