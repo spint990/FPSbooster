@@ -53,7 +53,7 @@ if not _G.Settings then
             Destroy = false
         },
         Other = {
-            ["FPS Cap"] = true, -- Set this true to uncap FPS
+            ["FPS Cap"] = 10, -- Limit FPS to 10 for optimization
             ["No Camera Effects"] = true,
             ["No Clothes"] = true,
             ["Low Water Graphics"] = true,
@@ -289,7 +289,7 @@ for i, v in pairs(Descendants) do
     CheckIfBad(v)
 end
 StarterGui:SetCore("SendNotification", {
-    Title = "discord.gg/UX42C52B",
+    Title = "FPS Booster",
     Text = "FPS Booster Loaded!",
     Duration = math.huge,
     Button1 = "Okay"
