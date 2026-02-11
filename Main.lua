@@ -67,7 +67,7 @@ if not _G.Settings then
         }
     }
 end
-local Players, Lighting, StarterGui, MaterialService = game:GetService("Players"), game:GetService("Lighting"), game:GetService("StarterGui"), game:GetService("MaterialService")
+local Players, Lighting, MaterialService = game:GetService("Players"), game:GetService("Lighting"), game:GetService("MaterialService")
 local ME, CanBeEnabled = Players.LocalPlayer, {"ParticleEmitter", "Trail", "Smoke", "Fire", "Sparkles"}
 local function PartOfCharacter(Inst)
     for i, v in pairs(Players:GetPlayers()) do
@@ -297,12 +297,7 @@ end
 for i, v in pairs(Descendants) do
     CheckIfBad(v)
 end
-StarterGui:SetCore("SendNotification", {
-    Title = "FPS Booster",
-    Text = "FPS Booster Loaded!",
-    Duration = math.huge,
-    Button1 = "Okay"
-})
+
 warn("FPS Booster Loaded!")
 
 game.DescendantAdded:Connect(function(value)
@@ -322,15 +317,7 @@ local function UpdateRenderState()
         RunService:Set3dRenderingEnabled(not NoRenderState)
     end)
     
-    if success then
-        pcall(function()
-            game:GetService("StarterGui"):SetCore("SendNotification", {
-                Title = "FPS Booster",
-                Text = "No Render: " .. (NoRenderState and "ON" or "OFF"),
-                Duration = 2
-            })
-        end)
-    end
+
 end
 
 -- Initialiser l'état par défaut (Active)
