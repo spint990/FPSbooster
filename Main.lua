@@ -114,6 +114,13 @@ local function CheckIfBad(Inst)
             if _G.Settings.Images.Destroy then
                 Inst:Destroy()
             end
+        elseif Inst:IsA("Decal") or Inst:IsA("Texture") then
+            if _G.Settings.Images.Invisible then
+                Inst.Transparency = 1
+            end
+            if _G.Settings.Images.Destroy then
+                Inst:Destroy()
+            end
         elseif Inst:IsA("ShirtGraphic") then
             if _G.Settings.Images.Invisible then
                 Inst.Graphic = ""
@@ -130,6 +137,8 @@ local function CheckIfBad(Inst)
             end
         elseif Inst:IsA("PostEffect") and (_G.Settings["No Camera Effects"] or (_G.Settings.Other and _G.Settings.Other["No Camera Effects"])) then
             Inst.Enabled = false
+        elseif (Inst:IsA("Sky") or Inst:IsA("Atmosphere") or Inst:IsA("Clouds")) and (_G.Settings["No Camera Effects"] or (_G.Settings.Other and _G.Settings.Other["No Camera Effects"])) then
+            Inst:Destroy()
         elseif Inst:IsA("Explosion") then
             if _G.Settings["Smaller Explosions"] or (_G.Settings.Other and _G.Settings.Other["Smaller Explosions"]) or (_G.Settings.Explosions and _G.Settings.Explosions.Smaller) then
                 Inst.BlastPressure = 1
